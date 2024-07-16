@@ -97,6 +97,9 @@
 #   Puppet stuff, define in which state should be the GRUB packages
 #   STRING : 'present'
 #
+# [*manage_config_file*]
+#   Enable it to manage GRUB configuration
+#
 # [*password*]
 #   Enable password to protect the GRUB configuration
 #   BOOL : false
@@ -164,6 +167,7 @@
 #   disable_recovery          => true,
 #   tune                      => '480 440 1',
 #   device_install            => ['/dev/sda'],
+#   manage_config_file        => false,
 #   password                  => true,
 #   password_username         => 'chewbacca',
 #   password_pbkdf2_hash      => 'grub.pbkdf2.sha512.10000.EDBE1B820072D36A7B0059C7C33A2AA8B9D60888B039D58',
@@ -216,6 +220,7 @@ class grub2 (
   String $package_ensure                            = $grub2::params::package_ensure,
   Array $package_name                               = $grub2::params::package_name,
   Optional[String] $package_name_legacy             = $grub2::params::package_name_legacy,
+  Boolean $manage_config_file                       = $grub2::params::manage_config_file,
   Boolean $password                                 = $grub2::params::password,
   Stdlib::Absolutepath $password_file               = $grub2::params::password_file,
   String $password_username                         = $grub2::params::password_username,
