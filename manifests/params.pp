@@ -21,7 +21,11 @@ class grub2::params {
   $install_grub                = false
   $remove_grub_legacy          = false
   $package_ensure              = 'present'
+<<<<<<< HEAD
   $manage_config_file          = false
+=======
+  $manage_config_file          = true
+>>>>>>> 486b603 (update toggle for grub2 config)
   $password                    = false
   $password_file               = '/etc/grub.d/50_password'
   $password_username           = ''
