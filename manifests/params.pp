@@ -21,6 +21,7 @@ class grub2::params {
   $install_grub                = false
   $remove_grub_legacy          = false
   $package_ensure              = 'present'
+  $manage_config_file          = false
   $password                    = false
   $password_file               = '/etc/grub.d/50_password'
   $password_username           = ''
